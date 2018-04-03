@@ -35,7 +35,7 @@ export default {
           picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000002QkMgs2GfWgL.jpg?max_age=2592000'
         },
       ]
-    }
+    } 
   },
   components:{
     'app-slider':Slider
