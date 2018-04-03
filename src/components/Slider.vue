@@ -61,19 +61,23 @@ export default {
     return {
       currentPageIndex: 0,
       _slider: null,
-      _timer:null
+      _timer: null
     };
   },
   mounted() {
     const _this = this;
-    _this.$nextTick(() => {
-      _this._initSliderWidth();
-      _this._initSlider();
-      if(_this.autoPlay){
-          _this._play();
-      }
-    });
+    _this.tmpTimer = setTimeout(() => {
+         _this._initSliderWidth();
+        _this._initSlider();
+        if (_this.autoPlay) {
+            _this._play();
+        }
+    }, 20);
   },
+  beforeDestroy() {
+    clearInterval(this._timer);
+    clearTimeout(this.tmpTimer);
+},
   methods: {
     /**
      * @name _initSliderWidth
@@ -98,22 +102,22 @@ export default {
      * @author postbird
      */
     _initSlider() {
-        const _this = this;
-        _this._slider = new BScroll(_this.$refs.slider, {
+      const _this = this;
+      _this._slider = new BScroll(_this.$refs.slider, {
         scrollX: true,
         scrollY: false,
         momentum: false,
-        click:true,
+        click: true,
         snap: {
-            loop: this.loop, // 循环
-            threshold: 0.1
+          loop: this.loop, // 循环
+          threshold: 0.1
         }
-        });
+      });
       // 获取当前页
       _this._getCurrentPageIndex();
       // 滚动之前 清除timer
-      _this._slider.on('beforeScrollStart',()=>{
-          clearInterval(_this._timer);
+      _this._slider.on("beforeScrollStart", () => {
+        clearInterval(_this._timer);
       });
     },
     /**
@@ -122,32 +126,32 @@ export default {
      * @author postbird
      */
     _getCurrentPageIndex() {
-        const _this = this;
-        _this._slider.on("scrollEnd", () => {
+      const _this = this;
+      _this._slider.on("scrollEnd", () => {
         let index = _this._slider.getCurrentPage().pageX;
         _this.currentPageIndex = index;
         // 如果自动播放 则开启
-        if(_this.autoPlay){
-            _this._play();
+        if (_this.autoPlay) {
+          _this._play();
         }
-        });
+      });
     },
     /**
      * @name _play
      * @description 控制自动轮播
      * @author postbird
      */
-    _play(){
-        const _this =this;
-        let pageIndex = _this.currentPageIndex;
-        _this._timer = setInterval(() => {
-            pageIndex++;
-            if(pageIndex >= _this.list.length){
-                pageIndex = 0;
-            }
-            _this._slider.goToPage(pageIndex);
-        }, this.speed);
-    },
+    _play() {
+      const _this = this;
+      let pageIndex = _this.currentPageIndex;
+      _this._timer = setInterval(() => {
+        pageIndex++;
+        if (pageIndex >= _this.list.length) {
+          pageIndex = 0;
+        }
+        _this._slider.goToPage(pageIndex);
+      }, this.speed);
+    }
   }
 };
 </script> 
