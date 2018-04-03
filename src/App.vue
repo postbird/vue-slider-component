@@ -6,9 +6,14 @@
       <app-slider :list="sliders" :loop="true" v-if="sliders.length" width="100%" ></app-slider>
    </div>
 </template>
-
+ 
 <script>
 import Slider from './components/Slider';
+import pic1 from './assets/images/1.jpg';
+import pic2 from './assets/images/2.jpg';
+import pic3 from './assets/images/3.jpg';
+import pic4 from './assets/images/4.jpg';
+import pic5 from './assets/images/5.jpg';
 export default {
   name: 'app',
   data () {
@@ -16,23 +21,23 @@ export default {
       sliders:[
         {
           linkUrl:'http://y.qq.com/w/album.html?albummid=001RsOK33No4Sz&ADTAG=myqq&from=myqq&channel=10007100',
-          picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000001EwfWs4QSIl6.jpg?max_age=2592000'
+          picUrl:pic1
         },
         {
           linkUrl:'https://y.qq.com/msa/270/0_5102.html?ADTAG=myqq&from=myqq&channel=10007100',
-          picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000001CV9tc1xK59w.jpg?max_age=2592000'
+          picUrl:pic2
         },
         {
           linkUrl:'https://y.qq.com/m/client/music_headline/index.html?_hidehd=1&_button=2&zid=689728&ADTAG=myqq&from=myqq&channel=10007100',
-          picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000002n0L9H3Bf8F0.jpg?max_age=2592000'
+          picUrl:pic3
         },
         {
           linkUrl:'http://y.qq.com/w/album.html?albummid=001cTmxl1t64WK&ADTAG=myqq&from=myqq&channel=10007100',
-          picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000001pf9Sy13Evav.jpg?max_age=2592000'
+          picUrl:pic4
         },
         {
           linkUrl:'https://y.qq.com/msa/324/0_5116.html?ADTAG=myqq&from=myqq&channel=10007100',
-          picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000002QkMgs2GfWgL.jpg?max_age=2592000'
+          picUrl:pic5
         },
       ]
     }

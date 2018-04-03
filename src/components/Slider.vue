@@ -82,7 +82,6 @@ export default {
      */
     _initSliderWidth() {
       const imgWidth = this.$refs.sliderItemImg[0].clientWidth;
-      console.log(imgWidth);
       let sliderWidth = imgWidth * this.list.length;
       if (this.loop) {
         // 循环轮播需要添加两个img DOM 的宽度
