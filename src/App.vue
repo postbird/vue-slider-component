@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-      <p class="title">演示图片来自：https://y.qq.com/</p>
+      <p class="title">演示图片来自：https://y.qq.com/ （侵权联系删除）</p>
       <p class="title">建议在移动端进行查看</p>
+      <p class="title">如果图片第一次未加载，则刷新页面即可</p>
       <app-slider :list="sliders" :loop="true" v-if="sliders.length" width="100%" ></app-slider>
    </div>
 </template>
