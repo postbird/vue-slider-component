@@ -39,6 +39,12 @@ export default {
   },
   components:{
     'app-slider':Slider
+  },
+  mounted(){
+    window.addEventListener("resize",()=>{
+      // 调整网页窗口大小
+      location.reload();
+    })
   }
 }
 </script>
