@@ -2,6 +2,12 @@
 
 > 基于 `better-scroll` 实现的移动端（PC端也可以） vue 轮播图组件
 
+## 更新记录
+
+### 20180404
+
+- 在 APP.vue增加了 resize 事件监听，会刷新页面。（因为没有在Slider中做窗口的响应）
+
 ## 在线预览
 
 - [http://postbird.gitee.io/vue-slider-component/](http://postbird.gitee.io/vue-slider-component/)
